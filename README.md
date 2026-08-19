@@ -207,13 +207,6 @@ Do **not** put any of these in git, notebooks, or chat logs you keep:
 
 For gated models, add a Kaggle secret named `HF_TOKEN`. Qwen2.5-3B-Instruct is public and does not require one.
 
-## Notes and limits
-
-- Closing VS Code or your PC does not stop Kaggle; **Stop session** or idle/GPU timeout does.
-- The GGUF Gradio demo is the **base** Q4_K_M model. Merging the LoRA adapter into GGUF was not done.
-- The statute splitter is heuristic: some section bodies start mid-sentence; Land Tax yields few rows; `ARIPA_2017_raw.txt` is labeled as ARIPO 1982 in the converter.
-- After training, test with a **land-law** question. Generic prompts (for example “Explain QLoRA”) are off-domain for this SFT set.
-
 ## License
 
 Notebooks and converter: use as you like for this project. Statute text in `raw/` is public law from Bangladesh sources; keep original attribution if you redistribute.
