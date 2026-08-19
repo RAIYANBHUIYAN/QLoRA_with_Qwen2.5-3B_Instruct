@@ -49,7 +49,7 @@ End-to-end **training** path (what QLoRA actually uses):
 
 ```mermaid
 flowchart TD
-  A[Attach Cursor to Kaggle Jupyter kernel] --> B[Stop Gradio / restart kernel]
+  A[Attach VS Code to Kaggle Jupyter kernel] --> B[Stop Gradio / restart kernel]
   B --> C[Upload land_law_sft.jsonl as a Kaggle dataset]
   C --> D[Load Qwen2.5-3B in 4-bit NF4]
   D --> E[Attach LoRA r=16 on attn + MLP]
@@ -127,11 +127,11 @@ Attach the JSONL to the Kaggle notebook (example path used in training):
 
 ## How to run on Kaggle
 
-Compute happens on **Kaggle**, not on your laptop. Cursor only edits the notebooks.
+Compute happens on **Kaggle**, not on your laptop. VS Code only edits the notebooks.
 
 1. On Kaggle: GPU **T4 or P100**, Internet **on**, start the session.
 2. Copy the **VS Code Compatible URL** (ends in `/proxy`). Do not commit that URL; it is a live session token.
-3. In Cursor: **Notebook: Select Notebook Kernel → Existing Jupyter Server** → paste → pick **Python 3**.
+3. In VS Code: **Notebook: Select Notebook Kernel → Existing Jupyter Server** → paste → pick **Python 3**.
 4. Confirm with:
 
 ```python
@@ -209,7 +209,7 @@ For gated models, add a Kaggle secret named `HF_TOKEN`. Qwen2.5-3B-Instruct is p
 
 ## Notes and limits
 
-- Closing Cursor or your PC does not stop Kaggle; **Stop session** or idle/GPU timeout does.
+- Closing VS Code or your PC does not stop Kaggle; **Stop session** or idle/GPU timeout does.
 - The GGUF Gradio demo is the **base** Q4_K_M model. Merging the LoRA adapter into GGUF was not done.
 - The statute splitter is heuristic: some section bodies start mid-sentence; Land Tax yields few rows; `ARIPA_2017_raw.txt` is labeled as ARIPO 1982 in the converter.
 - After training, test with a **land-law** question. Generic prompts (for example “Explain QLoRA”) are off-domain for this SFT set.
