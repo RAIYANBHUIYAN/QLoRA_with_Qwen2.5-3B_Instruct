@@ -1,0 +1,40 @@
+# Secrets and credentials — never commit these
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+credentials.json
+secrets/
+hf_token*
+HF_TOKEN
+kaggle.json
+
+# Local / Kaggle model artifacts (too large; session-only)
+output/
+hf/
+quantized/
+gguf/
+qlora/
+adapter/
+*.zip
+*.gguf
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.onnx
+
+# Python / Jupyter
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.python-version
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
